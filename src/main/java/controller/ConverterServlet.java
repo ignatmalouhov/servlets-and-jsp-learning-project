@@ -34,12 +34,10 @@ public class ConverterServlet extends HttpServlet {
         }
 
         String result = "";
-
         switch (unit) {
             case "CM" -> result = convertCM(amount);
             case "INCH" -> result = convertINCH(amount);
         }
-
         request.setAttribute("result", result);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/view/converter.jsp");
         dispatcher.forward(request, response);
